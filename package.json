@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Anubuthi.github.io/portfolio_website",
+  "homepage": "https://Anubuthi.github.io",
   "name": "anubuthi-portfolio-template",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +15,7 @@
   "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
   "build": "react-scripts build"
   },
-  
+
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "gh-pages": "^6.3.0",
