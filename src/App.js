@@ -35,12 +35,12 @@ function Home() {
         and their use in feild of marketing , finance , healthcare or product development — 
         I am always eager to explore new methods, tools, and ways to make data impactful.
       </p>
-      <p className="text-md max-w-xl mx-auto text-gray-600">
+      <p className="text-md max-w-xl mx-auto text-gray-700 dark:text-gray-200">
         I bring a creative, strategic mindset to problem-solving — blending analytical thinking with empathy, adaptability, 
         and collaboration. Whether it’s translating sign language in real time or forecasting AI-driven stock trends, I thrive 
         under pressure and enjoy building solutions that matter.
       </p>
-      <p className="text-md text-gray-600">
+      <p className="text-md text-gray-700  dark:text-gray-200 ">
          Currently seeking roles where I can grow as a data scientist/analyst, contribute meaningfully, and keep learning.
       </p>
       <div className="pt-6">
@@ -124,7 +124,7 @@ function Projects() {
               className="w-full h-48 object-cover rounded-t-lg"
             />
             <div className="p-5">
-              <h3 className="text-xl font-semibold mb-2">{proj.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-black">{proj.title}</h3>
               <p className="text-gray-700">{proj.summary}</p>
               <p className="text-sm text-gray-500 mt-2">Tools: {proj.tools}</p>
               {proj.link && (
@@ -249,10 +249,96 @@ function Contact() {
 
 
 function Storybook() {
-  return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold">My Storybook</h2>
-      <p className="mt-2">This is where the creative, animated version of your journey will go.</p>
+  const [selectedPhoto, setSelectedPhoto] = React.useState(null);
+  const photos = [
+    "/photo1.jpg",
+    "/photo2.jpg",
+    "/photo3.jpg",
+    "/photo4.jpg",
+    "/photo5.jpg",
+    "/photo6.jpg",
+    "/photo7.jpg",
+    "/photo8.jpg",
+    "/photo9.jpg",
+  ];
+
+  const blogPosts = [
+    {
+      date: "June 2025",
+      title: "First Week at Evoke: A Week Full of Bulls, Bears, and Breakthroughs",
+      summary: "My first week working on capital markets data was a whirlwind. I dove into all the possible data sources and trying to identify what information I can use.\nAlthough i only been  working with market data for a few days now I was able to learn so much about finanical data , I know this is only the tip of the icebreg ; and I am expremely excited to dive deep into this over the next few months..."
+    },
+    {
+      date: "May 2025",
+      title: "Bayesian ML and Diabetic Retinopathy",
+     summary: (
+  <>
+    <p className="mb-2">
+      I’ve been working on a project to classify diabetic retinopathy (DR) from retinal images — but instead of just building another confident model, I wanted to build one that knows when to say “I’m not sure.”
+    </p>
+    <p className="mb-2">
+      I trained four versions — ResNet and custom CNNs, each with 1 or 2 Bayesian layers — and used Monte Carlo Dropout to generate multiple predictions per image. From those, I calculated entropy to quantify uncertainty. If the entropy was high, the model simply said “IDK” rather than risk a bad prediction.
+    </p>
+    <p className="mb-2">
+      I also applied class-specific thresholds — being extra cautious for severe DR stages and more lenient for early ones — so the model isn’t just accurate, but aware of clinical stakes. Because sometimes, a model that tells us when not to trust it is more valuable than one that’s confidently wrong.
+    </p>
+    <p>
+      Still a work in progress, but I’m excited about where it’s headed — maybe even toward a paper.
+    </p>
+  </>
+)
+
+    }
+  ];
+
+   return (
+    <div className="p-10 max-w-5xl mx-auto space-y-10">
+      <h2 className="text-3xl font-bold text-center mb-6">My Storybook</h2>
+
+      <section>
+        <h3 className="text-xl font-semibold mb-4">Through My Lens</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {photos.map((src, index) => (
+            <div
+              key={index}
+              onClick={() => setSelectedPhoto(src)}
+              className="cursor-pointer overflow-hidden rounded-lg shadow transform hover:scale-105 hover:shadow-xl transition duration-300 ease-in-out"
+            >
+              <img
+                src={src}
+                alt={`photo-${index}`}
+                className="w-full h-60 object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {selectedPhoto && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <img
+            src={selectedPhoto}
+            alt="Full"
+            className="max-w-full max-h-[90vh] rounded shadow-lg"
+          />
+        </div>
+      )}
+
+      <section>
+        <h3 className="text-xl font-semibold mb-4">My Blog</h3>
+        <div className="space-y-6">
+          {blogPosts.map((post, index) => (
+            <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded shadow border dark:border-gray-700">
+              <p className="text-sm text-gray-500 dark:text-gray-400">{post.date}</p>
+              <h4 className="text-lg font-bold mt-1 mb-2 text-gray-800 dark:text-white">{post.title}</h4>
+              <p className="text-gray-700 dark:text-gray-300">{post.summary}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
