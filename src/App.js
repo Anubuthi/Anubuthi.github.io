@@ -28,20 +28,20 @@ function Home() {
         alt="Anubuthi Kottapalli"
         className="w-60 h-60 rounded-full mx-auto shadow-md object-cover"
       />
-      <h1 className="text-4xl font-bold">Hi, I’m Anubuthi 👋</h1>
+      <h1 className="text-4xl font-bold">Hi, I’m Anubuthi Kottapalli</h1>
       <p className="text-lg max-w-2xl mx-auto">
         I'm an Applied Data Science graduate student at the University of Chicago — passionate about turning complex data into 
-        real-world insights and solutions .As someone who is deeply curious about machine learning, AI and data science 
-        and their use in feild of marketing , finance , healthcare or product development — 
-        I am always eager to explore new methods, tools, and ways to make data impactful.
+        real-world insights and solutions. As someone who is deeply curious about machine learning, AI, and data science,
+        and their applications in marketing, finance, healthcare, and product development, 
+        I’m always eager to explore new methods, tools, and ways to make data impactful.
       </p>
       <p className="text-md max-w-xl mx-auto text-gray-700 dark:text-gray-200">
         I bring a creative, strategic mindset to problem-solving — blending analytical thinking with empathy, adaptability, 
         and collaboration. Whether it’s translating sign language in real time or forecasting AI-driven stock trends, I thrive 
         under pressure and enjoy building solutions that matter.
       </p>
-      <p className="text-md text-gray-700  dark:text-gray-200 ">
-         Currently seeking roles where I can grow as a data scientist/analyst, contribute meaningfully, and keep learning.
+      <p className="text-md text-gray-700 dark:text-gray-200">
+        Currently seeking roles where I can grow as a data scientist or analyst, contribute meaningfully, and keep learning.
       </p>
       <div className="pt-6">
         <a
@@ -62,7 +62,7 @@ function Projects() {
   const projects = [
     {
       title: "Bayesian Deep Learning for Diabetic Retinopathy",
-      summary: "Bayesian CNN to classify retinal images with uncertainty-aware predictions.",
+      summary: "Bayesian CNN to classify retinal images with uncertainty-aware predictions.The model uses Monte Carlo Dropout to generate multiple predictions per image, allowing for uncertainty estimation.",
       tools: "PyTorch, Blitz, GANs, Diffusion, MCDropout",
       image: "/project1.png",
     },
@@ -154,10 +154,11 @@ function Experience() {
       company: "Evoke Technologies",
       title: "Data Science Intern – Capital Markets (AI & Financial Research)",
       date: "Jun 2025 – Present",
-      bullets: [
-      "Build predictive models using financial fundamentals, technical indicators, and sentiment data to generate trading insights.",
-      "Apply NLP to financial news, earnings calls, and social media to extract actionable signals.",
-      "Collect and preprocess structured and unstructured market data, and collaborate with quant researchers and AI experts to document findings.",
+       bullets: [
+    "Built predictive models using company fundamentals, technical indicators, and sentiment data to generate trading signals across 9,000+ stocks and ETFs.",
+    "Applied NLP to financial news, earnings calls, and social media, extracting signals to forecast equity movement and support investment decisions.",
+    "Developed an automated pipeline that downloads, merges, and prepares data from multiple sources, saving 4–5 hours of daily manual work",
+    "Collaborated with quant researchers and presented findings to internal stakeholders.",
     ],
     },
     {
@@ -178,10 +179,12 @@ function Experience() {
       title: "Graduate Intern – Detection Engineering and Cyber Analytics",
       date: "Jan 2024 – Jul 2024",
       bullets: [
-        "Automated ServiceNow ticket creation using Streamlit and Python, saving 8.35 hours/day.",
-        "Visualized user behavior anomalies with Power BI to support security response teams.",
-        "Authored 20+ detailed detection playbooks for incidents on SPLUNK and WIZ.",
-      ],
+  "Automated internal service request triage with a Streamlit-Python tool, saving 8.35 hours daily in analyst time.",
+  "Visualized anomalous behavior using Power BI dashboards for User and Entity Behavior Analytics (UEBA) detection.",
+  "Authored 20+ detailed response playbooks for threat detection cases on SPLUNK and WIZ platforms.",
+  "Supported detection engineering tasks using O365 telemetry and mapped detections to MITRE ATT&CK techniques."
+    ],
+   
     },
     {
       logo: "/pes-logo.png",
@@ -212,9 +215,9 @@ function Experience() {
         <div key={i} className="flex border rounded-lg shadow hover:shadow-md transition overflow-hidden">
           <img src={role.logo} alt={`${role.company} logo`} className="w-24 h-24 object-contain p-2 bg-white" />
           <div className="p-6">
-            <h3 className="text-xl font-semibold">{role.title}</h3>
-            <p className="text-md text-gray-600 italic">{role.company} • {role.date}</p>
-            <ul className="list-disc pl-5 mt-3 space-y-2 text-gray-700">
+            <h3 className="text-xl font-bold">{role.title}</h3>
+            <p className="text-md text-gray-600 dark:text-white italic">{role.company} • {role.date}</p>
+            <ul className="list-disc pl-5 mt-3 space-y-2 text-gray-700 dark:text-white">
               {role.bullets.map((point, j) => (
                 <li key={j}>{point}</li>
               ))}
@@ -234,7 +237,6 @@ function Contact() {
       <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 max-w-sm w-full text-center border border-gray-200 dark:border-gray-700">
         <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Let's Connect</h2>
         <p className="text-gray-700 dark:text-gray-300 mb-2">📧 anubuthi@uchicago.edu</p>
-        <p className="text-gray-700 dark:text-gray-300 mb-2">📧 anubuthi.kottapalli@gmail.com</p>
         <p className="text-gray-700 dark:text-gray-300 mb-2">📞 +1 (513) 283-4485</p>
         <p className="text-gray-700 dark:text-gray-300 mb-2">
           💻 GitHub: <a href="https://github.com/Anubuthi" className="text-indigo-500 hover:underline">Anubuthi</a>
@@ -251,7 +253,7 @@ function Contact() {
 function Storybook() {
   const [selectedPhoto, setSelectedPhoto] = React.useState(null);
   const photos = [
-    "/photo1.jpg",
+    "/photo10.jpg",
     "/photo2.jpg",
     "/photo3.jpg",
     "/photo4.jpg",
@@ -259,7 +261,7 @@ function Storybook() {
     "/photo6.jpg",
     "/photo7.jpg",
     "/photo8.jpg",
-    "/photo9.jpg",
+    "/photo19.jpg",
   ];
 
   const blogPosts = [
